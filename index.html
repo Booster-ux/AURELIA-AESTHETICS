@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Aurelia Beauty & Aesthetic Studio - A premium, luxury beauty salon offering manicure, pedicure, facial skincare, aesthetic treatments, and professional beauty consultations.">
+    <title>Aurelia | Luxury Beauty & Aesthetic Studio</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="navbar-header" id="navbar">
+        <div class="navbar-container">
+            <a href="#home" class="logo">
+                <span class="logo-sub">AURELIA</span>
+                <span class="logo-main">AESTHETICS</span>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#featured" class="nav-link">Featured</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#appointment" class="nav-link">Appointments</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="navbar-actions">
+                <a href="#appointment" class="btn btn-gold btn-nav">Book Appointment</a>
+                <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+                    <i class="fa-solid fa-bars menu-icon"></i>
+                    <i class="fa-solid fa-xmark close-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-bg" id="heroBg"
+            style="background-image: url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=1920&q=80');">
+        </div>
+
+        <div class="hero-content container">
+            <span class="luxury-label fade-in-up">Luxury Beauty & Aesthetic Studio</span>
+            <h1 class="hero-title fade-in-up">Reveal Your Natural Beauty</h1>
+            <p class="hero-desc fade-in-up">Experience bespoke self-care with our premium manicures, pedicures, facial
+                skincare, and personalized aesthetic treatments. Designed for elegance, tailored for you.</p>
+
+            <div class="hero-actions fade-in-up">
+                <a href="#appointment" class="btn btn-gold">Book an Appointment</a>
+                <a href="#services" class="btn btn-outline">Explore Services</a>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="hero-trust-indicators fade-in-up">
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="trust-text">
+                        <h4>Experienced Professionals</h4>
+                        <p>Certified treatments</p>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fa-solid fa-gem"></i></div>
+                    <div class="trust-text">
+                        <h4>Premium Products</h4>
+                        <p>Organic luxury brands</p>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fa-solid fa-heart"></i></div>
+                    <div class="trust-text">
+                        <h4>Personalised Care</h4>
+                        <p>Tailored consultations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator">
+            <a href="#services" aria-label="Scroll to services">
+                <span class="scroll-mouse"><span class="scroll-wheel"></span></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 3. Services Section -->
+    <section id="services" class="services-section section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle text-gold animate-on-scroll">Exclusive Treatment Selection</span>
+                <h2 class="section-title animate-on-scroll">Our Beauty Services</h2>
+                <div class="title-divider animate-on-scroll"></div>
+                <p class="section-desc animate-on-scroll">Indulge in our curated treatments designed to soothe, refresh,
+                    and redefine your natural elegance.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Card 1: Manicure -->
+                <div class="service-card animate-on-scroll" data-service="Manicure">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-hands-sparkles"></i>
+                    </div>
+                    <h3 class="service-name">Classic Manicure</h3>
+                    <p class="service-desc-text">Nail shaping, cuticle care, hand massage, and professional lacquer
+                        finish.</p>
+                    <div class="service-meta">
+                        <span class="service-duration"><i class="fa-regular fa-clock"></i> 45 Mins</span>
+                        <span class="service-price">From $45</span>
+                    </div>
+                    <button class="btn btn-card-gold book-service-btn">Book Service</button>
+                </div>
+
+                <!-- Card 2: Pedicure -->
+                <div class="service-card animate-on-scroll" data-service="Pedicure">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-soap"></i>
+                    </div>
+                    <h3 class="service-name">Classic Pedicure</h3>
+                    <p class="service-desc-text">Relaxing foot soak, scrub, nail grooming, foot massage, and premium
+                        polish.</p>
+                    <div class="service-meta">
+                        <span class="service-duration"><i class="fa-regular fa-clock"></i> 60 Mins</span>
+                        <span class="service-price">From $55</span>
+                    </div>
+                    <button class="btn btn-card-gold book-service-btn">Book Service</button>
+                </div>
+
+                <!-- Card 3: Facial Treatment -->
+                <div class="service-card animate-on-scroll" data-service="Facial Treatment">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-spa"></i>
+                    </div>
+                    <h3 class="service-name">Essential Facial Treatment</h3>
+                    <p class="service-desc-text">Soothing facial cleansing, gentle extraction, mask, and customized
+                        hydration.</p>
+                    <div class="service-meta">
+                        <span class="service-duration"><i class="fa-regular fa-clock"></i> 60 Mins</span>
+                        <span class="service-price">From $85</span>
+                    </div>
+                    <button class="btn btn-card-gold book-service-btn">Book Service</button>
+                </div>
+
+                <!-- Card 4: Skincare Consultation -->
+                <div class="service-card animate-on-scroll" data-service="Skincare Consultation">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-clipboard-question"></i>
+                    </div>
+                    <h3 class="service-name">Skincare Consultation</h3>
+                    <p class="service-desc-text">Deep skin analysis and expert recommendations for a personalized
+                        skincare regimen.</p>
+                    <div class="service-meta">
+                        <span class="service-duration"><i class="fa-regular fa-clock"></i> 30 Mins</span>
+                        <span class="service-price">From $40</span>
+                    </div>
+                    <button class="btn btn-card-gold book-service-btn">Book Service</button>
+                </div>
+
+                <!-- Card 5: Nail Art -->
+                <div class="service-card animate-on-scroll" data-service="Nail Art">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="service-name">Signature Nail Art</h3>
+                    <p class="service-desc-text">Custom, hand-painted gel designs, embellishments, and custom shapes.
+                    </p>
+                    <div class="service-meta">
+                        <span class="service-duration"><i class="fa-regular fa-clock"></i> 40 Mins</span>
+                        <span class="service-price">From $35</span>
+                    </div>
+                    <button class="btn btn-card-gold book-service-btn">Book Service</button>
+                </div>
+
+                <!-- Card 6: Deep Cleansing Facial -->
+                <div class="service-card animate-on-scroll" data-service="Deep Cleansing Facial">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-spray-can-sparkles"></i>
+                    </div>
+                    <h3 class="service-name">Deep Cleansing Facial</h3>
+                    <p class="service-desc-text">Intense purification, steam therapy, botanical enzymes, and debris
+                        removal.</p>
+                    <div class="service-meta">
+                        <span class="service-duration"><i class="fa-regular fa-clock"></i> 75 Mins</span>
+                        <span class="service-price">From $95</span>
+                    </div>
+                    <button class="btn btn-card-gold book-service-btn">Book Service</button>
+                </div>
+
+                <!-- Card 7: Hydration Treatment -->
+                <div class="service-card animate-on-scroll" data-service="Hydration Treatment">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <h3 class="service-name">Hydration Treatment</h3>
+                    <p class="service-desc-text">Moisture-locking serum infusion and hyaluronic mask for plump, glowing
+                        skin.</p>
+                    <div class="service-meta">
+                        <span class="service-duration"><i class="fa-regular fa-clock"></i> 50 Mins</span>
+                        <span class="service-price">From $80</span>
+                    </div>
+                    <button class="btn btn-card-gold book-service-btn">Book Service</button>
+                </div>
+
+                <!-- Card 8: Beauty Consultation -->
+                <div class="service-card animate-on-scroll" data-service="Beauty Consultation">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="service-name">Professional Consultation</h3>
+                    <p class="service-desc-text">Comprehensive overview of aesthetics, beauty choices, and customized
+                        scheduling.</p>
+                    <div class="service-meta">
+                        <span class="service-duration"><i class="fa-regular fa-clock"></i> 30 Mins</span>
+                        <span class="service-price">Complementary</span>
+                    </div>
+                    <button class="btn btn-card-gold book-service-btn">Book Service</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. About Section -->
+    <section id="about" class="about-section section-padding border-tb">
+        <div class="container ad-grid">
+            <div class="about-image-container animate-on-scroll">
+                <div class="about-image-wrapper">
+                    <div class="about-img-bg-deco"></div>
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80"
+                        alt="Luxury Beauty Treatment at Aurelia" class="about-image">
+                </div>
+            </div>
+
+            <div class="about-content-container animate-on-scroll">
+                <span class="subtitle text-gold">About Our Studio</span>
+                <h2 class="section-title">Elevating Your Inner Elegance</h2>
+                <p class="about-lead">Aurelia Beauty & Aesthetic Studio is a sanctuary of refined self-care, where
+                    state-of-the-art treatments meet peaceful relaxation.</p>
+                <p class="about-body">For nearly a decade, we have provided an unmatched luxury experience. We
+                    specialize in advanced manicure art, restoring pedicure treatments, medical-grade facial skincare,
+                    and personalized lifestyle aesthetics. Our commitment is details, hygiene, and outstanding wellness
+                    results.</p>
+
+                <ul class="benefits-list">
+                    <li><i class="fa-solid fa-circle-check check-icon"></i> Certified beauty professionals with
+                        specialized training.</li>
+                    <li><i class="fa-solid fa-circle-check check-icon"></i> Premium skincare products (organic and
+                        medical-grade).</li>
+                    <li><i class="fa-solid fa-circle-check check-icon"></i> Sterilized, hygienic equipment and
+                        clinical-level protocols.</li>
+                    <li><i class="fa-solid fa-circle-check check-icon"></i> Personalised treatments tailored
+                        specifically to your skin profile.</li>
+                    <li><i class="fa-solid fa-circle-check check-icon"></i> Relaxing, warm environment with high-end
+                        premium comforts.</li>
+                    <li><i class="fa-solid fa-circle-check check-icon"></i> Easy, digital appointment booking and
+                        support.</li>
+                </ul>
+
+                <button class="btn btn-gold" id="learnMoreBtn">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Detail Modal -->
+    <div class="modal-overlay" id="aboutModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <button class="modal-close" id="modalCloseBtn" aria-label="Close details modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 id="modalTitle" class="modal-title">Our Heritage & Standards</h3>
+            <div class="modal-body-content">
+                <p>Welcome to Aurelia, a premier luxury aesthetic studio founded on the core philosophy that self-care
+                    is a profound celebration of natural grace. Every service we perform is guided by scientific
+                    precision, design excellence, and a philosophy of restorative comfort.</p>
+
+                <h4>Our Core Commitments</h4>
+                <ul>
+                    <li><strong>Rigorous Clinical Hygiene:</strong> All tools are autoclaved and medical-grade standards
+                        are maintained throughout.</li>
+                    <li><strong>Premium Brands Only:</strong> We curate highly potent clinical labels, premium botanical
+                        formulas, and custom gel solutions.</li>
+                    <li><strong>Continuous Training:</strong> Our experts regularly study top-tier aesthetic techniques
+                        to remain at the leading edge of modern skincare and beauty.</li>
+                    <li><strong>Tailored Sensory Journeys:</strong> We customize lighting, sounds, scents, and
+                        temperatures to make every treatment an escape.</li>
+                </ul>
+
+                <p>Allow yourself to unwind in a sanctuary of luxury. We invite you to experience the finest attention
+                    to beauty, aesthetics, and personalized renewal.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Featured Treatments Section -->
+    <section id="featured" class="featured-section section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle text-gold animate-on-scroll font-secondary">Masterpiece Experience</span>
+                <h2 class="section-title animate-on-scroll">Featured Treatments</h2>
+                <div class="title-divider animate-on-scroll"></div>
+                <p class="section-desc animate-on-scroll">Our signature services offer deep rejuvenation and unmatched
+                    refinement for coordinates of ultimate pampering.</p>
+            </div>
+
+            <div class="featured-grid">
+                <!-- Large Card 1 -->
+                <div class="featured-card animate-on-scroll" data-service="Nail Art">
+                    <div class="featured-img-container">
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=700&q=80"
+                            alt="Luxury Manicure" class="featured-img">
+                        <div class="featured-img-overlay"></div>
+                    </div>
+                    <div class="featured-info text-center">
+                        <span class="featured-badge">Signature Selection</span>
+                        <h3 class="featured-name">Luxury Manicure Suite</h3>
+                        <p class="featured-desc-text">Deep cuticle restoration, thermal milk bath, exfoliating vanilla
+                            scrub, mineral wax massage, and professional lacquer.</p>
+                        <div class="featured-price-details">
+                            <span class="featured-duration"><i class="fa-regular fa-clock"></i> 70 Mins</span>
+                            <span class="featured-price">$75</span>
+                        </div>
+                        <button class="btn btn-gold btn-full book-service-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Large Card 2 -->
+                <div class="featured-card animate-on-scroll" data-service="Pedicure">
+                    <div class="featured-img-container">
+                        <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=700&q=80"
+                            alt="Signature Pedicure" class="featured-img">
+                        <div class="featured-img-overlay"></div>
+                    </div>
+                    <div class="featured-info text-center">
+                        <span class="featured-badge">Indulgence Selection</span>
+                        <h3 class="featured-name">Signature Pedicure</h3>
+                        <p class="featured-desc-text">Sea kelp thermal foot spa, intense callus buffing, volcanic hot
+                            stone leg massage, skin mask, and long-lasting gel coating.</p>
+                        <div class="featured-price-details">
+                            <span class="featured-duration"><i class="fa-regular fa-clock"></i> 80 Mins</span>
+                            <span class="featured-price">$90</span>
+                        </div>
+                        <button class="btn btn-gold btn-full book-service-btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Large Card 3 -->
+                <div class="featured-card animate-on-scroll" data-service="Facial Treatment">
+                    <div class="featured-img-container">
+                        <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=700&q=80"
+                            alt="Radiance Facial" class="featured-img">
+                        <div class="featured-img-overlay"></div>
+                    </div>
+                    <div class="featured-info text-center">
+                        <span class="featured-badge">Skin Wellness</span>
+                        <h3 class="featured-name">Radiance Facial Spa</h3>
+                        <p class="featured-desc-text">Custom multi-phase enzyme peel, deep herbal extraction,
+                            cold-hammer skin firming, gold-infused hydro-gel mask, and vitamin C repair.</p>
+                        <div class="featured-price-details">
+                            <span class="featured-duration"><i class="fa-regular fa-clock"></i> 90 Mins</span>
+                            <span class="featured-price">$145</span>
+                        </div>
+                        <button class="btn btn-gold btn-full book-service-btn">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Beauty Process Section -->
+    <section class="process-section section-padding border-tb bg-secondary">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle text-gold animate-on-scroll">Step-By-Step Journey</span>
+                <h2 class="section-title animate-on-scroll">How The Experience Works</h2>
+                <div class="title-divider animate-on-scroll"></div>
+                <p class="section-desc animate-on-scroll">Your path to premium relaxation is simple, smooth, and
+                    designed to match your schedules.</p>
+            </div>
+
+            <div class="process-grid">
+                <!-- Step 1 -->
+                <div class="process-step animate-on-scroll">
+                    <div class="step-num-container">
+                        <div class="step-num">01</div>
+                        <div class="step-connector"></div>
+                    </div>
+                    <div class="step-icon-box">
+                        <i class="fa-solid fa-hands-sparkles"></i>
+                    </div>
+                    <h3 class="step-title">Choose a Service</h3>
+                    <p class="step-desc">Select from our manicures, pedicures, clinical facials, or professional beauty
+                        consultations.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="process-step animate-on-scroll">
+                    <div class="step-num-container">
+                        <div class="step-num">02</div>
+                        <div class="step-connector"></div>
+                    </div>
+                    <div class="step-icon-box">
+                        <i class="fa-regular fa-calendar-check"></i>
+                    </div>
+                    <h3 class="step-title">Select Date & Time</h3>
+                    <p class="step-desc">Pick your preferred timing through our online booking. Weekend slots fill up
+                        early.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process-step animate-on-scroll">
+                    <div class="step-num-container">
+                        <div class="step-num">03</div>
+                        <div class="step-connector"></div>
+                    </div>
+                    <div class="step-icon-box">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h3 class="step-title">Confirm Appointment</h3>
+                    <p class="step-desc">Get instant notification and setup personal consultations for your selected
+                        details.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="process-step animate-on-scroll">
+                    <div class="step-num-container">
+                        <div class="step-num">04</div>
+                    </div>
+                    <div class="step-icon-box">
+                        <i class="fa-solid fa-spa"></i>
+                    </div>
+                    <h3 class="step-title">Enjoy Your Treatment</h3>
+                    <p class="step-desc">Relax and submerge in ultimate luxury while our wellness experts care for your
+                        skin.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Gallery Section -->
+    <section id="gallery" class="gallery-section section-padding">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle text-gold animate-on-scroll">Our Visual Portfolio</span>
+                <h2 class="section-title animate-on-scroll">The Gallery</h2>
+                <div class="title-divider animate-on-scroll"></div>
+                <p class="section-desc animate-on-scroll">Browse standard-setting nail art, skincare restorations, and
+                    the premium design of Aurelia.</p>
+            </div>
+
+            <!-- Category Filters -->
+            <div class="gallery-filters animate-on-scroll">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="nails">Nails</button>
+                <button class="filter-btn" data-filter="pedicure">Pedicure</button>
+                <button class="filter-btn" data-filter="skincare">Skincare</button>
+                <button class="filter-btn" data-filter="salon">Salon</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid animate-on-scroll">
+                <!-- Item 1: Nails -->
+                <div class="gallery-item" data-category="nails">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=650&q=80"
+                        alt="Luxury Manicure Art" class="gallery-img">
+                    <div class="gallery-hover-overlay">
+                        <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        <div class="gallery-item-meta">
+                            <h4>Luxury Manicure</h4>
+                            <span>Nails</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2: Skincare -->
+                <div class="gallery-item" data-category="skincare">
+                    <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=650&q=80"
+                        alt="Facial Skincare Treatment" class="gallery-img">
+                    <div class="gallery-hover-overlay">
+                        <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        <div class="gallery-item-meta">
+                            <h4>Radiance Hydration</h4>
+                            <span>Skincare</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3: Pedicure -->
+                <div class="gallery-item" data-category="pedicure">
+                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=650&q=80"
+                        alt="Signature Pedicure Treatment" class="gallery-img">
+                    <div class="gallery-hover-overlay">
+                        <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        <div class="gallery-item-meta">
+                            <h4>Signature Pedicure</h4>
+                            <span>Pedicure</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4: Salon -->
+                <div class="gallery-item" data-category="salon">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=650&q=80"
+                        alt="Salon Interior Reception" class="gallery-img">
+                    <div class="gallery-hover-overlay">
+                        <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        <div class="gallery-item-meta">
+                            <h4>Aurelia Reception</h4>
+                            <span>Salon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5: Nails Art -->
+                <div class="gallery-item" data-category="nails">
+                    <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=650&q=80"
+                        alt="Gel Nail Custom Polish" class="gallery-img">
+                    <div class="gallery-hover-overlay">
+                        <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        <div class="gallery-item-meta">
+                            <h4>Custom Gel Paint</h4>
+                            <span>Nails</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6: Salon -->
+                <div class="gallery-item" data-category="salon">
+                    <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=650&q=80"
+                        alt="Treatment Suite Room" class="gallery-img">
+                    <div class="gallery-hover-overlay">
+                        <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        <div class="gallery-item-meta">
+                            <h4>Luxury Spa Suite</h4>
+                            <span>Salon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true"
+        aria-label="Image gallery zoom lightbox">
+        <button class="lightbox-close" id="lightboxCloseBtn" aria-label="Close lightbox"><i
+                class="fa-solid fa-xmark"></i></button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrevBtn" aria-label="Previous image"><i
+                class="fa-solid fa-chevron-left"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img" id="lightboxImg">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+        <button class="lightbox-nav lightbox-next" id="lightboxNextBtn" aria-label="Next image"><i
+                class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <!-- 8. Testimonials Section -->
+    <section id="testimonials" class="testimonials-section section-padding bg-secondary border-t">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle text-gold animate-on-scroll">client testimonials</span>
+                <h2 class="section-title animate-on-scroll">Aurelia Stories</h2>
+                <div class="title-divider animate-on-scroll"></div>
+                <p class="section-desc animate-on-scroll">Read how our dedicated therapies have brought joy and deep
+                    aesthetic satisfaction to our beloved guests.</p>
+            </div>
+
+            <div class="slider-outer-wrapper animate-on-scroll">
+                <div class="slider-viewport" id="sliderViewport">
+                    <div class="slider-inner" id="sliderInner">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="client-photo-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&h=150&q=80"
+                                        alt="Victoria Mercer" class="client-photo">
+                                </div>
+                                <div class="client-info">
+                                    <h4 class="client-name">Victoria Mercer</h4>
+                                    <span class="client-service">Deep Cleansing Facial</span>
+                                    <div class="client-rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                                <p class="testimonial-text">"The deep cleansing facial is absolutely transfiguring. My
+                                    skin has never looked so clear, glowing, and refreshed. The customized care offered
+                                    by Aurelia is incomparable. I will definitely keep coming back!"</p>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="client-photo-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80"
+                                        alt="Samantha Klay" class="client-photo">
+                                </div>
+                                <div class="client-info">
+                                    <h4 class="client-name">Samantha Klay</h4>
+                                    <span class="client-service">Signature Pedicure</span>
+                                    <div class="client-rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                                <p class="testimonial-text">"I reserve a Signature Pedicure treatment twice a month. The
+                                    hot stone foot massage is pure heaven. After a stressful day, walking into Aurelia
+                                    feels like entering a calm sanctuary. Every staff member is friendly and precise."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="client-photo-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=150&h=150&q=80"
+                                        alt="Evelyn Porter" class="client-photo">
+                                </div>
+                                <div class="client-info">
+                                    <h4 class="client-name">Evelyn Porter</h4>
+                                    <span class="client-service">Luxury Manicure</span>
+                                    <div class="client-rating">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                                <p class="testimonial-text">"The detail in Aurelia's manicure suite is outstanding.
+                                    Their gel formulas are durable and do not chip. My designer nail art looks
+                                    completely elegant and gathers compliments every day."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Navigation -->
+                <button class="slider-nav slider-prev" id="sliderPrevBtn" aria-label="Previous testimonial"><i
+                        class="fa-solid fa-chevron-left"></i></button>
+                <button class="slider-nav slider-next" id="sliderNextBtn" aria-label="Next testimonial"><i
+                        class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9 & 10. Appointment Section & Availability Cards -->
+    <section id="appointment" class="appointment-section section-padding">
+        <div class="container app-grid">
+
+            <!-- Booking Form -->
+            <div class="booking-form-wrapper animate-on-scroll">
+                <span class="subtitle text-gold">Schedule Wellness</span>
+                <h2 class="form-title">Reserve Your Treatment</h2>
+                <div class="title-divider left-aligned"></div>
+                <p class="form-instructions">Select your desired service, date, and details. We will confirm your
+                    session options within 2 hours.</p>
+
+                <form id="bookingForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name <span class="req">*</span></label>
+                            <input type="text" id="fullName" class="form-control" placeholder="Jane Doe" required>
+                            <div class="error-msg" id="nameError">Name cannot be empty.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="emailAddress">Email Address <span class="req">*</span></label>
+                            <input type="email" id="emailAddress" class="form-control"
+                                placeholder="goodnesesther@gmail.com" required>
+                            <div class="error-msg" id="emailError">Please enter a valid email address.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number <span class="req">*</span></label>
+                            <input type="tel" id="phoneNumber" class="form-control" placeholder="07079722429" required>
+                            <div class="error-msg" id="phoneError">Please enter a valid phone number (10+ digits).</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="serviceSelect">Select Service <span class="req">*</span></label>
+                            <select id="serviceSelect" class="form-control" required>
+                                <option value="" disabled selected>Choose a service...</option>
+                                <option value="Manicure">Classic Manicure ($45)</option>
+                                <option value="Pedicure">Classic Pedicure ($55)</option>
+                                <option value="Facial Treatment">Essential Facial Treatment ($85)</option>
+                                <option value="Skincare Consultation">Skincare Consultation ($40)</option>
+                                <option value="Nail Art">Signature Nail Art ($35)</option>
+                                <option value="Deep Cleansing Facial">Deep Cleansing Facial ($95)</option>
+                                <option value="Hydration Treatment">Hydration Treatment ($80)</option>
+                                <option value="Beauty Consultation">Professional Consultation (Complementary)</option>
+                            </select>
+                            <div class="error-msg" id="serviceError">Please select a service.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="prefDate">Preferred Date <span class="req">*</span></label>
+                            <input type="date" id="prefDate" class="form-control" required>
+                            <div class="error-msg" id="dateError">Date cannot be empty or in the past.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="prefTime">Preferred Time <span class="req">*</span></label>
+                            <select id="prefTime" class="form-control" required>
+                                <option value="" disabled selected>Choose time slot...</option>
+                                <option value="09:00 AM">09:00 AM - 10:30 AM</option>
+                                <option value="11:00 AM">11:00 AM - 12:30 PM</option>
+                                <option value="01:00 PM">01:00 PM - 02:30 PM</option>
+                                <option value="03:00 PM">03:00 PM - 04:30 PM</option>
+                                <option value="05:00 PM">05:00 PM - 06:30 PM</option>
+                                <option value="07:00 PM">07:00 PM - 08:30 PM</option>
+                            </select>
+                            <div class="error-msg" id="timeError">Please select a preferred time slot.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Additional Message (Optional)</label>
+                        <textarea id="message" class="form-control text-area"
+                            placeholder="Enter special demands, skin allergies, or design codes..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-gold btn-full btn-submit" id="submitBtn">
+                        <span class="btn-text">Submit Appointment Request</span>
+                        <span class="loader"><i class="fa-solid fa-spinner fa-spin"></i> Processing...</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Info & Availability Cards -->
+            <div class="info-avail-wrapper animate-on-scroll">
+                <!-- Hours Card -->
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fa-regular fa-clock card-info-icon"></i>
+                        <h3>Opening Hours</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <div class="time-item">
+                            <span>Monday - Friday</span>
+                            <span>9:00 AM - 9:00 PM</span>
+                        </div>
+                        <div class="time-item">
+                            <span>Saturday</span>
+                            <span>9:00 AM - 7:00 PM</span>
+                        </div>
+                        <div class="time-item">
+                            <span>Sunday</span>
+                            <span>10:00 AM - 5:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact card -->
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fa-solid fa-location-dot card-info-icon"></i>
+                        <h3>Salon Details</h3>
+                    </div>
+                    <div class="info-card-body">
+                        <ul class="contact-details-list">
+                            <li><i class="fa-solid fa-phone"></i> <a href="tel:07079722429"
+                                    style="color: inherit; text-decoration: none;">07079722429</a></li>
+                            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:goodnesesther@gmail.com"
+                                    style="color: inherit; text-decoration: none;">goodnesesther@gmail.com</a></li>
+                            <li><i class="fa-solid fa-map-pin"></i> Peace Avenue Street, FUTA Southgate</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- WhatsApp Card -->
+                <div class="info-card whatsapp-card text-center">
+                    <i class="fa-brands fa-whatsapp whatsapp-icon"></i>
+                    <h3>Prefer Quick Chat?</h3>
+                    <p>Message our aesthetic assistants directly via WhatsApp for quick session configurations.</p>
+                    <a href="https://wa.me/2347079722429?text=Hello%20Aurelia%20Studio,%20I%20would%20like%20to%20book%20a%20skincare%20session."
+                        target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-full">
+                        <i class="fa-brands fa-whatsapp"></i> Book via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Confirmation Modal -->
+    <div class="modal-overlay" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successModalTitle">
+        <div class="modal-content confirmation-modal">
+            <button class="modal-close" id="successCloseBtn" aria-label="Close confirmation"><i
+                    class="fa-solid fa-xmark"></i></button>
+            <div class="success-icon-wrapper">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 id="successModalTitle" class="modal-title text-center">Appointment Request Sent!</h3>
+            <p class="success-intro text-center">Thank you, <span id="confirmName" class="text-gold">Jane</span>! We
+                have received your booking and recorded the following details:</p>
+
+            <div class="confirmation-details">
+                <div class="confirm-item">
+                    <span class="lbl">Assigned Service:</span>
+                    <span class="val" id="confirmService">Classic Manicure</span>
+                </div>
+                <div class="confirm-item">
+                    <span class="lbl">Date:</span>
+                    <span class="val" id="confirmDate">October 25, 2026</span>
+                </div>
+                <div class="confirm-item">
+                    <span class="lbl">Time Frame:</span>
+                    <span class="val" id="confirmTime">11:00 AM - 12:30 PM</span>
+                </div>
+                <div class="confirm-item">
+                    <span class="lbl">Phone Number:</span>
+                    <span class="val" id="confirmPhone">+1 (234) 567-8900</span>
+                </div>
+                <div class="confirm-item">
+                    <span class="lbl">Email Inbox:</span>
+                    <span class="val" id="confirmEmail">jane@example.com</span>
+                </div>
+            </div>
+
+            <p class="success-outro text-center">A text and email confirmation will be sent shortly once we align our
+                aesthetic salon suites.</p>
+            <button class="btn btn-gold btn-full" id="confirmDoneBtn">Return</button>
+        </div>
+    </div>
+
+    <!-- 11. Call-to-action Section -->
+    <section class="cta-section section-padding">
+        <div class="cta-bg-overlay"></div>
+        <div class="cta-bg"
+            style="background-image: url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1920&q=80');">
+        </div>
+        <div class="cta-content container text-center">
+            <span class="subtitle text-gold animate-on-scroll">Your Deserved Indulgence</span>
+            <h2 class="cta-title animate-on-scroll">Your Beauty Deserves Professional Care</h2>
+            <div class="title-divider animate-on-scroll"></div>
+            <p class="cta-desc animate-on-scroll">Step into a luxurious space curated to deliver premium treatments and
+                high-end services. Book your slot or contact our consultation experts today.</p>
+
+            <div class="cta-actions animate-on-scroll">
+                <a href="#appointment" class="btn btn-gold">Book Appointment</a>
+                <a href="tel:07079722429" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. Contact Section -->
+    <section id="contact" class="contact-section section-padding border-tb">
+        <div class="container contact-grid">
+
+            <!-- Address details -->
+            <div class="contact-info-column animate-on-scroll">
+                <span class="subtitle text-gold">Get In Touch</span>
+                <h2 class="section-title text-left">Connect With Us</h2>
+                <div class="title-divider left-aligned"></div>
+                <p class="contact-lead-text">Have a question about manicure details, our specific organic peels, or
+                    custom bookings? Please reach out. We await your messages.</p>
+
+                <div class="contact-methods">
+                    <div class="method-item">
+                        <div class="method-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <div class="method-text">
+                            <h4>Studio Address</h4>
+                            <p>Peace Avenue Street, FUTA Southgate</p>
+                        </div>
+                    </div>
+
+                    <div class="method-item">
+                        <div class="method-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                        <div class="method-text">
+                            <h4>Direct Phone Call</h4>
+                            <p><a href="tel:07079722429" style="color: inherit; text-decoration: none;">07079722429</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="method-item">
+                        <div class="method-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                        <div class="method-text">
+                            <h4>Email Communication</h4>
+                            <p><a href="mailto:goodnesesther@gmail.com"
+                                    style="color: inherit; text-decoration: none;">goodnesesther@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Socials & Map link -->
+                <div class="contact-socials-wrapper">
+                    <h4>Follow Our Journey</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle"
+                            aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle"
+                            aria-label="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://wa.me/2347079722429" target="_blank" rel="noopener noreferrer"
+                            class="social-circle" aria-label="WhatsApp Direct"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form details -->
+            <div class="contact-form-column animate-on-scroll">
+                <div class="contact-form-card">
+                    <h3>Send a Direct Message</h3>
+                    <form id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="contactName">Name <span class="req">*</span></label>
+                            <input type="text" id="contactName" class="form-control" placeholder="Your Name" required>
+                            <div class="error-msg" id="contactNameError">Name cannot be empty.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactEmail">Email <span class="req">*</span></label>
+                            <input type="email" id="contactEmail" class="form-control"
+                                placeholder="goodnesesther@gmail.com" required>
+                            <div class="error-msg" id="contactEmailError">Please enter a valid email address.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactSubject">Subject <span class="req">*</span></label>
+                            <input type="text" id="contactSubject" class="form-control"
+                                placeholder="How can we assist you?" required>
+                            <div class="error-msg" id="contactSubjectError">Subject cannot be empty.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactMessage">Message <span class="req">*</span></label>
+                            <textarea id="contactMessage" class="form-control text-area-small"
+                                placeholder="Describe your request..." required></textarea>
+                            <div class="error-msg" id="contactMessageError">Message cannot be empty.</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-gold btn-full" id="contactSubmitBtn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="loader"><i class="fa-solid fa-spinner fa-spin"></i> Sending...</span>
+                        </button>
+                    </form>
+
+                    <div class="contact-success-banner" id="contactSuccessBanner">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Thank you! Your message was sent successfully. We will call you soon.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. Footer -->
+    <footer class="footer-section">
+        <div class="container footer-grid">
+            <!-- Brand -->
+            <div class="footer-column brand-column">
+                <a href="#home" class="logo footer-logo">
+                    <span class="logo-sub">AURELIA</span>
+                    <span class="logo-main">AESTHETICS</span>
+                </a>
+                <p class="footer-desc">An elegant and luxurious beauty sanctuary offering manicure, foot wellness,
+                    medical skin-cleansing, and high-end aesthetics. We elevate self-care into high art.</p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://wa.me/2347079722429" target="_blank" rel="noopener noreferrer"
+                        aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Links -->
+            <div class="footer-column">
+                <h3>Quick Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Studio</a></li>
+                    <li><a href="#gallery">Visual Portfolio</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact Details</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-column">
+                <h3>Treatments</h3>
+                <ul class="footer-links">
+                    <li><a href="#services">Classic Manicure</a></li>
+                    <li><a href="#services">Classic Pedicure</a></li>
+                    <li><a href="#services">Facial Treatment</a></li>
+                    <li><a href="#services">Skincare Consultation</a></li>
+                    <li><a href="#services">Signature Nail Art</a></li>
+                </ul>
+            </div>
+
+            <!-- Location info -->
+            <div class="footer-column">
+                <h3>Aesthetic Suite</h3>
+                <ul class="footer-info-details">
+                    <li><i class="fa-solid fa-map-pin"></i> Peace Avenue Street,<br>FUTA Southgate</li>
+                    <li><i class="fa-solid fa-phone"></i> <a href="tel:07079722429"
+                            style="color: inherit; text-decoration: none;">07079722429</a></li>
+                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:goodnesesther@gmail.com"
+                            style="color: inherit; text-decoration: none;">goodnesesther@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p class="copyright-text">&copy; 2026 Aurelia Aesthetics. All rights reserved.</p>
+                <div class="footer-policy-links">
+                    <a href="#" class="policy-link" id="privacyLink">Privacy Policy</a>
+                    <a href="#" class="policy-link" id="termsLink">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTopBtn" aria-label="Back to top of page">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Shared Privacy and Terms Modals -->
+    <div class="modal-overlay" id="policyModal" role="dialog" aria-modal="true" aria-labelledby="policyTitle">
+        <div class="modal-content">
+            <button class="modal-close" id="policyCloseBtn" aria-label="Close modal"><i
+                    class="fa-solid fa-xmark"></i></button>
+            <h3 id="policyTitle" class="modal-title">Terms & Policies</h3>
+            <div class="modal-body-content" id="policyBody">
+                <!-- Will be dynamically populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Script file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
