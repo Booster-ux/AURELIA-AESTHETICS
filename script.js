@@ -4,23 +4,23 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // ==========================================================================
     // 1. CUSTOM CURSOR
     // ==========================================================================
     const cursor = document.getElementById('customCursor');
-    
+
     // Check if device is desktop (has pointer, not touch)
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    
+
     if (!isTouchDevice && cursor) {
         cursor.style.display = 'block';
-        
+
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = `${e.clientX}px`;
             cursor.style.top = `${e.clientY}px`;
         });
-        
+
         // Add hover effects for interactive elements
         const hoverInteractives = document.querySelectorAll('a, button, select, input, textarea, .gallery-item, .filter-btn');
         hoverInteractives.forEach(el => {
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section[id]');
-    
+
     // Add scrolled class when page is scrolled down
     const handleNavbarScroll = () => {
         if (window.scrollY > 50) {
@@ -46,10 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.classList.remove('scrolled');
         }
     };
-    
+
     window.addEventListener('scroll', handleNavbarScroll);
     handleNavbarScroll(); // Initial call
-    
+
     // Toggle Mobile Menu
     if (mobileMenuBtn && navMenu) {
         mobileMenuBtn.addEventListener('click', () => {
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
+
     // Close Mobile Menu on Click and handle smooth scroll offsets
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 navbar.classList.remove('active-menu');
                 document.body.style.overflow = '';
             }
-            
+
             // Highlight clicked link
             navLinks.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
@@ -88,12 +88,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Highlight Active Section in Navbar on Scroll
     const highlightActiveNav = () => {
         const scrollY = window.scrollY;
-        
+
         sections.forEach(current => {
             const sectionHeight = current.offsetHeight;
             const sectionTop = current.offsetTop - 120;
             const sectionId = current.getAttribute('id');
-            
+
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
                 navLinks.forEach(link => {
                     link.classList.remove('active');
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     };
-    
+
     window.addEventListener('scroll', highlightActiveNav);
 
     // ==========================================================================
@@ -113,25 +113,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const aboutModal = document.getElementById('aboutModal');
     const learnMoreBtn = document.getElementById('learnMoreBtn');
     const modalCloseBtn = document.getElementById('modalCloseBtn');
-    
+
     const openAboutModal = () => {
         aboutModal.classList.add('active');
         document.body.style.overflow = 'hidden';
     };
-    
+
     const closeAboutModal = () => {
         aboutModal.classList.remove('active');
         document.body.style.overflow = '';
     };
-    
+
     if (learnMoreBtn && aboutModal) {
         learnMoreBtn.addEventListener('click', openAboutModal);
     }
-    
+
     if (modalCloseBtn) {
         modalCloseBtn.addEventListener('click', closeAboutModal);
     }
-    
+
     // Close modal on outside click
     if (aboutModal) {
         aboutModal.addEventListener('click', (e) => {
@@ -152,22 +152,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
     const lightboxPrevBtn = document.getElementById('lightboxPrevBtn');
     const lightboxNextBtn = document.getElementById('lightboxNextBtn');
-    
+
     let currentGalleryList = [];
     let currentLightboxIdx = 0;
-    
+
     // Gallery Filters
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             // Update active state class
             filterButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            
+
             const filterValue = btn.getAttribute('data-filter');
-            
+
             galleryItems.forEach(item => {
                 const category = item.getAttribute('data-category');
-                
+
                 if (filterValue === 'all' || category === filterValue) {
                     item.style.display = 'block';
                     // Retrigger simple entrance fade
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
-    
+
     // Reconstruct list of visible source images for lightbox controls
     const updateLightboxList = () => {
         currentGalleryList = [];
@@ -203,16 +203,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     };
-    
+
     // Open Lightbox
     galleryItems.forEach((item, index) => {
         item.addEventListener('click', () => {
             updateLightboxList();
-            
+
             // Find matched item in current visual list
             const clickedImgSrc = item.querySelector('.gallery-img').getAttribute('src');
             currentLightboxIdx = currentGalleryList.findIndex(e => e.src === clickedImgSrc);
-            
+
             if (currentLightboxIdx !== -1) {
                 showLightboxImage();
                 lightbox.classList.add('active');
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    
+
     const showLightboxImage = () => {
         const item = currentGalleryList[currentLightboxIdx];
         if (item) {
@@ -229,28 +229,28 @@ document.addEventListener('DOMContentLoaded', () => {
             lightboxCaption.innerHTML = `<strong>${item.title}</strong> — <span style="color: #d4af37">${item.category}</span>`;
         }
     };
-    
+
     const closeLightbox = () => {
         lightbox.classList.remove('active');
         document.body.style.overflow = '';
     };
-    
+
     const navigateLightboxPrev = () => {
         if (currentGalleryList.length === 0) return;
         currentLightboxIdx = (currentLightboxIdx - 1 + currentGalleryList.length) % currentGalleryList.length;
         showLightboxImage();
     };
-    
+
     const navigateLightboxNext = () => {
         if (currentGalleryList.length === 0) return;
         currentLightboxIdx = (currentLightboxIdx + 1) % currentGalleryList.length;
         showLightboxImage();
     };
-    
+
     if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
     if (lightboxPrevBtn) lightboxPrevBtn.addEventListener('click', navigateLightboxPrev);
     if (lightboxNextBtn) lightboxNextBtn.addEventListener('click', navigateLightboxNext);
-    
+
     if (lightbox) {
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) {
@@ -267,67 +267,67 @@ document.addEventListener('DOMContentLoaded', () => {
     const sliderNextBtn = document.getElementById('sliderNextBtn');
     const slides = document.querySelectorAll('.testimonial-slide');
     const sliderViewport = document.getElementById('sliderViewport');
-    
+
     let activeSlideIndex = 0;
     let autoSlideInterval;
-    
+
     const setSlidePosition = () => {
         if (sliderInner) {
             sliderInner.style.transform = `translateX(-${activeSlideIndex * 100}%)`;
         }
     };
-    
+
     const handleNextSlide = () => {
         if (slides.length === 0) return;
         activeSlideIndex = (activeSlideIndex + 1) % slides.length;
         setSlidePosition();
     };
-    
+
     const handlePrevSlide = () => {
         if (slides.length === 0) return;
         activeSlideIndex = (activeSlideIndex - 1 + slides.length) % slides.length;
         setSlidePosition();
     };
-    
+
     if (sliderNextBtn) sliderNextBtn.addEventListener('click', () => {
         handleNextSlide();
         resetTimer();
     });
-    
+
     if (sliderPrevBtn) sliderPrevBtn.addEventListener('click', () => {
         handlePrevSlide();
         resetTimer();
     });
-    
+
     const startTimer = () => {
         autoSlideInterval = setInterval(handleNextSlide, 6000);
     };
-    
+
     const resetTimer = () => {
         clearInterval(autoSlideInterval);
         startTimer();
     };
-    
+
     // Auto-sliding details
     if (sliderViewport) {
         startTimer();
-        
+
         sliderViewport.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
         sliderViewport.addEventListener('mouseleave', startTimer);
-        
+
         // Touch Swipe Supports for Responsive Screens
         let touchStartX = 0;
         let touchEndX = 0;
-        
+
         sliderViewport.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
         }, { passive: true });
-        
+
         sliderViewport.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
             handleSwipeGesture();
         }, { passive: true });
-        
+
         const handleSwipeGesture = () => {
             if (touchEndX < touchStartX - 50) {
                 handleNextSlide();
@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeSuccessModal();
             }
         }
-        
+
         // Keyboard gallery pagination
         if (lightbox && lightbox.classList.contains('active')) {
             if (e.key === 'ArrowRight') {
@@ -380,7 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const serviceSelect = document.getElementById('serviceSelect');
     const submitBtn = document.getElementById('submitBtn');
     const prefDateInput = document.getElementById('prefDate');
-    
+
     // Set minimal date in form to today, preventing past appointment bookings
     if (prefDateInput) {
         const today = new Date();
@@ -389,17 +389,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const day = String(today.getDate()).padStart(2, '0');
         prefDateInput.min = `${year}-${month}-${day}`;
     }
-    
+
     // Handle specific action click selects ("Book Service" and "Book Now")
     const bookServiceButtons = document.querySelectorAll('.book-service-btn');
     bookServiceButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            
+
             // Resolve nearest card context to extract service value
             const cardEl = btn.closest('.service-card') || btn.closest('.featured-card');
             const serviceKey = cardEl ? cardEl.getAttribute('data-service') : '';
-            
+
             if (serviceKey && serviceSelect) {
                 // Find matching option inside select box
                 for (let i = 0; i < serviceSelect.options.length; i++) {
@@ -410,7 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             }
-            
+
             // Smoothly traverse user down to booking form
             const appointmentSection = document.getElementById('appointment');
             if (appointmentSection) {
@@ -428,13 +428,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(String(email).toLowerCase());
     };
-    
+
     const validatePhone = (num) => {
         // Clear non-digit patterns and confirm minimum 10 digits
         const digits = num.replace(/\D/g, '');
         return digits.length >= 10;
     };
-    
+
     const setValidationUI = (element, isValid) => {
         const parent = element.closest('.form-group');
         if (parent) {
@@ -445,20 +445,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     };
-    
+
     // Form Submit Handler
     if (bookingForm) {
         bookingForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             const nameEl = document.getElementById('fullName');
             const emailEl = document.getElementById('emailAddress');
             const phoneEl = document.getElementById('phoneNumber');
             const dateEl = document.getElementById('prefDate');
             const timeEl = document.getElementById('prefTime');
-            
+
             let formStateValid = true;
-            
+
             // Name Check
             const nameVal = nameEl.value.trim();
             if (nameVal === '') {
@@ -467,7 +467,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 setValidationUI(nameEl, true);
             }
-            
+
             // Email Check
             const emailVal = emailEl.value.trim();
             if (emailVal === '' || !validateEmail(emailVal)) {
@@ -476,7 +476,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 setValidationUI(emailEl, true);
             }
-            
+
             // Phone Check
             const phoneVal = phoneEl.value.trim();
             if (phoneVal === '' || !validatePhone(phoneVal)) {
@@ -485,7 +485,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 setValidationUI(phoneEl, true);
             }
-            
+
             // Service Check
             const serviceVal = serviceSelect.value;
             if (serviceVal === '') {
@@ -494,19 +494,19 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 setValidationUI(serviceSelect, true);
             }
-            
+
             // Date Check
             const dateVal = dateEl.value;
-            const selectedDateStamp = new Date(dateVal).setHours(0,0,0,0);
-            const todayStamp = new Date().setHours(0,0,0,0);
-            
+            const selectedDateStamp = new Date(dateVal).setHours(0, 0, 0, 0);
+            const todayStamp = new Date().setHours(0, 0, 0, 0);
+
             if (dateVal === '' || selectedDateStamp < todayStamp) {
                 setValidationUI(dateEl, false);
                 formStateValid = false;
             } else {
                 setValidationUI(dateEl, true);
             }
-            
+
             // Time Check
             const timeVal = timeEl.value;
             if (timeVal === '') {
@@ -515,22 +515,22 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 setValidationUI(timeEl, true);
             }
-            
+
             // Trigger Submissions if everything is pristine
             if (formStateValid) {
                 // Loading spinner trigger
                 submitBtn.classList.add('loading');
                 submitBtn.disabled = true;
-                
+
                 // Simulate aesthetic database mapping delays
                 setTimeout(() => {
                     submitBtn.classList.remove('loading');
                     submitBtn.disabled = false;
-                    
+
                     // Populate success confirmation modal details
                     document.getElementById('confirmName').textContent = nameVal;
                     document.getElementById('confirmService').textContent = serviceSelect.options[serviceSelect.selectedIndex].text;
-                    
+
                     // Format dates to friendly styling: October 25, 2026
                     const d = new Date(dateVal);
                     const formattedDateStr = d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
@@ -538,35 +538,35 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.getElementById('confirmTime').textContent = timeVal;
                     document.getElementById('confirmPhone').textContent = phoneVal;
                     document.getElementById('confirmEmail').textContent = emailVal;
-                    
+
                     // Open Success Modal
                     openSuccessModal();
-                    
+
                     // Reset Form fields
                     bookingForm.reset();
                 }, 2000);
             }
         });
     }
-    
+
     // Modal confirmation events
     const successModal = document.getElementById('successModal');
     const successCloseBtn = document.getElementById('successCloseBtn');
     const confirmDoneBtn = document.getElementById('confirmDoneBtn');
-    
+
     const openSuccessModal = () => {
         successModal.classList.add('active');
         document.body.style.overflow = 'hidden';
     };
-    
+
     const closeSuccessModal = () => {
         successModal.classList.remove('active');
         document.body.style.overflow = '';
     };
-    
+
     if (successCloseBtn) successCloseBtn.addEventListener('click', closeSuccessModal);
     if (confirmDoneBtn) confirmDoneBtn.addEventListener('click', closeSuccessModal);
-    
+
     if (successModal) {
         successModal.addEventListener('click', (e) => {
             if (e.target === successModal) {
@@ -581,60 +581,60 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
     const contactSuccessBanner = document.getElementById('contactSuccessBanner');
     const contactSubmitBtn = document.getElementById('contactSubmitBtn');
-    
+
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             const cName = document.getElementById('contactName');
             const cEmail = document.getElementById('contactEmail');
             const cSubject = document.getElementById('contactSubject');
             const cMessage = document.getElementById('contactMessage');
-            
+
             let contactValid = true;
-            
+
             if (cName.value.trim() === '') {
                 setValidationUI(cName, false);
                 contactValid = false;
             } else {
                 setValidationUI(cName, true);
             }
-            
+
             if (cEmail.value.trim() === '' || !validateEmail(cEmail.value)) {
                 setValidationUI(cEmail, false);
                 contactValid = false;
             } else {
                 setValidationUI(cEmail, true);
             }
-            
+
             if (cSubject.value.trim() === '') {
                 setValidationUI(cSubject, false);
                 contactValid = false;
             } else {
                 setValidationUI(cSubject, true);
             }
-            
+
             if (cMessage.value.trim() === '') {
                 setValidationUI(cMessage, false);
                 contactValid = false;
             } else {
                 setValidationUI(cMessage, true);
             }
-            
+
             if (contactValid) {
                 contactSubmitBtn.classList.add('loading');
                 contactSubmitBtn.disabled = true;
-                
+
                 setTimeout(() => {
                     contactSubmitBtn.classList.remove('loading');
                     contactSubmitBtn.disabled = false;
-                    
+
                     // Show contact confirmation window overlay
                     contactSuccessBanner.classList.add('active');
-                    
+
                     // Wipe form values
                     contactForm.reset();
-                    
+
                     // Hide success banner after 5 seconds
                     setTimeout(() => {
                         contactSuccessBanner.classList.remove('active');
@@ -651,19 +651,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const policyTitle = document.getElementById('policyTitle');
     const policyBody = document.getElementById('policyBody');
     const policyCloseBtn = document.getElementById('policyCloseBtn');
-    
+
     const privacyLink = document.getElementById('privacyLink');
     const termsLink = document.getElementById('termsLink');
-    
+
     const closePolicyModal = () => {
         policyModal.classList.remove('active');
         document.body.style.overflow = '';
     };
-    
+
     if (policyCloseBtn) {
         policyCloseBtn.addEventListener('click', closePolicyModal);
     }
-    
+
     if (policyModal) {
         policyModal.addEventListener('click', (e) => {
             if (e.target === policyModal) {
@@ -671,13 +671,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
+
     const openPolicyModal = (type) => {
         if (!policyModal || !policyTitle || !policyBody) return;
-        
+
         document.body.style.overflow = 'hidden';
         policyModal.classList.add('active');
-        
+
         if (type === 'privacy') {
             policyTitle.textContent = 'Privacy Policy';
             policyBody.innerHTML = `
@@ -700,14 +700,14 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         }
     };
-    
+
     if (privacyLink) {
         privacyLink.addEventListener('click', (e) => {
             e.preventDefault();
             openPolicyModal('privacy');
         });
     }
-    
+
     if (termsLink) {
         termsLink.addEventListener('click', (e) => {
             e.preventDefault();
@@ -719,7 +719,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 10. BACK-TO-TOP BUTTON
     // ==========================================================================
     const backToTopBtn = document.getElementById('backToTopBtn');
-    
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 400 && backToTopBtn) {
             backToTopBtn.classList.add('show');
@@ -727,7 +727,7 @@ document.addEventListener('DOMContentLoaded', () => {
             backToTopBtn.classList.remove('show');
         }
     });
-    
+
     if (backToTopBtn) {
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({
@@ -741,14 +741,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 11. SCROLL INTERSECTION OBSERVER FOR FADE-IN ENTRANCES
     // ==========================================================================
     const scrollObservables = document.querySelectorAll('.animate-on-scroll');
-    
+
     if ('IntersectionObserver' in window) {
         const observerOptions = {
             root: null,
             threshold: 0.15,
             rootMargin: '0px 0px -50px 0px'
         };
-        
+
         const observerCallback = (entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -757,7 +757,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         };
-        
+
         const scrollObserver = new IntersectionObserver(observerCallback, observerOptions);
         scrollObservables.forEach(el => scrollObserver.observe(el));
     } else {
@@ -777,4 +777,152 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // ==========================================================================
+    // 12. PREMIUM GOLDEN PARTICLE BACKGROUND ANIMATION (HIGH PERFORMANCE CANVAS)
+    // ==========================================================================
+    (function () {
+        const canvas = document.createElement('canvas');
+        canvas.id = 'premium-particles-canvas';
+        document.body.prepend(canvas);
+
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let animationId = null;
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+
+        const goldColors = ['#D4AF37', '#E6C35C', '#F5E6A8'];
+        const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        function resizeCanvas() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+
+        class Particle {
+            constructor() {
+                this.reset();
+                // Random position across canvas on startup
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+            }
+
+            reset() {
+                this.x = Math.random() * width;
+                this.y = height + Math.random() * 20; // Start below screen
+                this.size = Math.random() * 4 + 2; // Size 2px - 6px
+                this.speedY = -(Math.random() * 0.4 + 0.1); // Slow drift upwards
+                this.speedX = (Math.random() * 0.2 - 0.1); // Slight sway
+                this.color = goldColors[Math.floor(Math.random() * goldColors.length)];
+                this.alpha = Math.random() * 0.4 + 0.1; // Opacity 0.1 - 0.5
+                this.fadeSpeed = Math.random() * 0.002 + 0.001;
+                this.alphaDirection = Math.random() > 0.5 ? 1 : -1;
+                this.scaleSpeed = Math.random() * 0.005 + 0.002;
+                this.scaleDirection = Math.random() > 0.5 ? 1 : -1;
+                this.maxAlpha = Math.random() * 0.4 + 0.25;
+                this.minAlpha = 0.05;
+            }
+
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX;
+
+                // Subtle fade breathing
+                this.alpha += this.fadeSpeed * this.alphaDirection;
+                if (this.alpha >= this.maxAlpha) {
+                    this.alphaDirection = -1;
+                } else if (this.alpha <= this.minAlpha) {
+                    this.alphaDirection = 1;
+                }
+
+                // Subtle size breathing
+                this.size += this.scaleSpeed * this.scaleDirection;
+                if (this.size >= 6) {
+                    this.scaleDirection = -1;
+                } else if (this.size <= 2) {
+                    this.scaleDirection = 1;
+                }
+
+                // Reset particle if off-canvas
+                if (this.y < -10 || this.x < -10 || this.x > width + 10) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.shadowBlur = 6;
+                ctx.shadowColor = this.color;
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        function init() {
+            resizeCanvas();
+            particles = [];
+            // Dynamically scale count based on device sizing (denser on desktop, lighter on mobile)
+            const count = Math.min(Math.floor(width / 35), 35);
+            for (let i = 0; i < count; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+
+            animationId = requestAnimationFrame(animate);
+        }
+
+        function handleReducedMotionChange() {
+            if (reducedMotionQuery.matches) {
+                if (animationId) {
+                    cancelAnimationFrame(animationId);
+                    animationId = null;
+                }
+                ctx.clearRect(0, 0, width, height);
+            } else {
+                init();
+                if (!animationId) {
+                    animate();
+                }
+            }
+        }
+
+        if (!reducedMotionQuery.matches) {
+            init();
+            animate();
+        }
+
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            if (!reducedMotionQuery.matches) {
+                const desired = Math.min(Math.floor(width / 35), 35);
+                while (particles.length < desired) {
+                    particles.push(new Particle());
+                }
+                if (particles.length > desired) {
+                    particles.length = desired;
+                }
+            }
+        });
+
+        if (reducedMotionQuery.addEventListener) {
+            reducedMotionQuery.addEventListener('change', handleReducedMotionChange);
+        } else {
+            reducedMotionQuery.addListener(handleReducedMotionChange);
+        }
+    })();
 });
