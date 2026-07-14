@@ -483,6 +483,13 @@ h6 {
 .trust-icon {
     font-size: 1.5rem;
     color: var(--primary-gold);
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    line-height: 1;
 }
 
 .trust-text {
@@ -495,11 +502,15 @@ h6 {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin: 0;
+    line-height: 1.2;
 }
 
 .trust-text p {
     font-size: 0.75rem;
     color: var(--muted);
+    margin: 2px 0 0 0;
+    line-height: 1.2;
 }
 
 .hero-scroll-indicator {
@@ -2115,6 +2126,14 @@ select.form-control {
     .hero-trust-indicators {
         flex-direction: column;
         gap: 20px;
+        align-items: center;
+        width: 100%;
+    }
+
+    .trust-item {
+        justify-content: flex-start;
+        width: 260px;
+        margin: 0 auto;
     }
 
     .services-grid {
@@ -2240,4 +2259,23 @@ select.form-control {
         animation-duration: 0s !important;
         transition-duration: 0s !important;
     }
+}
+
+/* Custom Inline Heading & Label Icon Alignment */
+.manicure-service-icon {
+    color: var(--primary-gold);
+    margin-right: 8px;
+    font-size: 0.9em;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+}
+
+.select-service-icon {
+    color: var(--primary-gold);
+    margin-right: 8px;
+    font-size: 0.95em;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
 }
