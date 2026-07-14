@@ -2109,17 +2109,33 @@ select.form-control {
         /* Keep header clean on mobile, trigger bookings from hero / footer */
     }
 
+    .hero-section {
+        height: auto;
+        min-height: 100vh;
+        padding-top: calc(var(--navbar-height) + 40px);
+        padding-bottom: 50px;
+        display: flex;
+        align-items: center;
+    }
+
+    .hero-content {
+        padding-top: 0;
+    }
+
     .hero-title {
         font-size: 2.8rem;
+        margin-bottom: 16px;
     }
 
     .hero-desc {
         font-size: 1.05rem;
+        margin-bottom: 24px;
     }
 
     .hero-actions {
         flex-direction: column;
         gap: 12px;
+        margin-bottom: 32px;
     }
 
     .hero-actions .btn {
@@ -2135,8 +2151,19 @@ select.form-control {
 
     .trust-item {
         width: 100%;
-        max-width: 260px;
+        max-width: 280px;
         margin: 0 auto;
+    }
+
+    .hero-scroll-indicator {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin-top: 36px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
 
     .services-grid {
